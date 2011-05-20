@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tipo: 1
+  assunto: MyString
+  numero_de_processo: 1
+  setor_origem: 
+  funcionario_origem: 
+
+two:
+  tipo: 1
+  assunto: MyString
+  numero_de_processo: 1
+  setor_origem: 
+  funcionario_origem: 

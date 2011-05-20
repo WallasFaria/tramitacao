@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @documento.tipo %>
+</p>
+
+<p>
+  <b>Assunto:</b>
+  <%= @documento.assunto %>
+</p>
+
+<p>
+  <b>Numero de processo:</b>
+  <%= @documento.numero_de_processo %>
+</p>
+
+<p>
+  <b>Setor origem:</b>
+  <%= @documento.setor_origem %>
+</p>
+
+<p>
+  <b>Funcionario origem:</b>
+  <%= @documento.funcionario_origem %>
+</p>
+
+
+<%= link_to 'Edit', edit_documento_path(@documento) %> |
+<%= link_to 'Back', documentos_path %>

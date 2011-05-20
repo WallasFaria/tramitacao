@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Setor destino:</b>
+  <%= @doc_tramitacao.setor_destino %>
+</p>
+
+<p>
+  <b>Pessoa destino:</b>
+  <%= @doc_tramitacao.pessoa_destino %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @doc_tramitacao.data %>
+</p>
+
+<p>
+  <b>Hora:</b>
+  <%= @doc_tramitacao.hora %>
+</p>
+
+
+<%= link_to 'Edit', edit_doc_tramitacao_path(@doc_tramitacao) %> |
+<%= link_to 'Back', doc_tramitacaos_path %>

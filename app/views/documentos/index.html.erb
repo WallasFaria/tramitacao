@@ -1,0 +1,31 @@
+<h1>Listing documentos</h1>
+
+<table>
+  <tr>
+    <th>Tipo</th>
+    <th>Assunto</th>
+    <th>Numero de processo</th>
+    <th>Setor origem</th>
+    <th>Funcionario origem</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @documentos.each do |documento| %>
+  <tr>
+    <td><%= documento.tipo %></td>
+    <td><%= documento.assunto %></td>
+    <td><%= documento.numero_de_processo %></td>
+    <td><%= documento.setor_origem %></td>
+    <td><%= documento.funcionario_origem %></td>
+    <td><%= link_to 'Show', documento %></td>
+    <td><%= link_to 'Edit', edit_documento_path(documento) %></td>
+    <td><%= link_to 'Destroy', documento, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Documento', new_documento_path %>

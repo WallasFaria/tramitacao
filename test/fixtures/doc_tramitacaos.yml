@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  setor_destino: 
+  pessoa_destino: 
+  data: 2011-05-19
+  hora: 2011-05-19 13:31:16
+
+two:
+  setor_destino: 
+  pessoa_destino: 
+  data: 2011-05-19
+  hora: 2011-05-19 13:31:16

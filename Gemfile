@@ -1,6 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
+gem 'brazilian-rails', '~>3.0.0'
+gem 'formtastic'
+gem 'validation_reflection'
+gem 'inherited_resources'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

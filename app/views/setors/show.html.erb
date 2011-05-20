@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @setor.nome %>
+</p>
+
+<p>
+  <b>Sigla:</b>
+  <%= @setor.sigla %>
+</p>
+
+
+<%= link_to 'Edit', edit_setor_path(@setor) %> |
+<%= link_to 'Back', setors_path %>
