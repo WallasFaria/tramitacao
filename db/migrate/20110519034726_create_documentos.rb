@@ -4,8 +4,8 @@ class CreateDocumentos < ActiveRecord::Migration
       t.integer :tipo
       t.string :assunto
       t.integer :numero_de_processo
-      t.references :setor_origem, :class => :setor
-      t.references :funcionario_origem, :class => :funcionario
+      t.references :setor_origem
+      t.references :funcionario_origem
 
       t.timestamps
     end

@@ -35,3 +35,7 @@
  - matricula
  - email
  e deve estar vinculado a um setor
+
+ gem para login - devise
+ gem para auterização - cancan
+ rake db:rollback para desfazer o migrate

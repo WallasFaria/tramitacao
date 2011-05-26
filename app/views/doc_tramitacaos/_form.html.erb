@@ -1,33 +1,7 @@
-<%= form_for(@doc_tramitacao) do |f| %>
-  <% if @doc_tramitacao.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@doc_tramitacao.errors.count, "error") %> prohibited this doc_tramitacao from being saved:</h2>
+<%= semantic_form_for(@doc_tramitacao) do |f| %>
 
-      <ul>
-      <% @doc_tramitacao.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.input :setor_destino, :label_method => :nome %>
+  <%= f.input :pessoa_destino, :label_method => :nome %>
+  <%= f.submit 'Salvar' %>
 
-  <div class="field">
-    <%= f.label :setor_destino %><br />
-    <%= f.text_field :setor_destino %>
-  </div>
-  <div class="field">
-    <%= f.label :pessoa_destino %><br />
-    <%= f.text_field :pessoa_destino %>
-  </div>
-  <div class="field">
-    <%= f.label :data %><br />
-    <%= f.date_select :data %>
-  </div>
-  <div class="field">
-    <%= f.label :hora %><br />
-    <%= f.time_select :hora %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

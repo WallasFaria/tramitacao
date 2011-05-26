@@ -1,8 +1,8 @@
 Tramitacao::Application.routes.draw do
-  resources :doc_tramitacaos
-
-  resources :documentos
-
+  resources :documentos do
+    resources :doc_tramitacaos
+  end
+# link_to 'tramitar', new_doc_tramitacao_documento_path(documento)
   resources :setors
 
   resources :funcionarios

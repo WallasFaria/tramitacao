@@ -1,10 +1,11 @@
 class CreateDocTramitacaos < ActiveRecord::Migration
   def self.up
     create_table :doc_tramitacaos do |t|
-      t.references :setor_destino, :class => :setor
-      t.references :pessoa_destino, :class => :funcionario
-      t.date :data
-      t.time :hora
+      t.references :setor_destino
+      t.references :pessoa_destino
+      t.date :data_hora
+      t.references :documentos
+    end
 
       t.timestamps
     end

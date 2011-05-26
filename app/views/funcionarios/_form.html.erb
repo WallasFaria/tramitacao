@@ -1,33 +1,9 @@
-<%= form_for(@funcionario) do |f| %>
-  <% if @funcionario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@funcionario.errors.count, "error") %> prohibited this funcionario from being saved:</h2>
+<%= semantic_form_for(@funcionario) do |f| %>
 
-      <ul>
-      <% @funcionario.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= f.input :nome %>
+    <%= f.input :matricula %>
+    <%= f.input :email %>
+    <%= f.input :setor, :label_method => :nome %>
+    <%= f.submit 'Salvar' %>
 
-  <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :matricula %><br />
-    <%= f.text_field :matricula %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :setor %><br />
-    <%= f.text_field :setor %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

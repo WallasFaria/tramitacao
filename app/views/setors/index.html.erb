@@ -1,4 +1,4 @@
-<h1>Listing setors</h1>
+<h1>Listagem de setores</h1>
 
 <table>
   <tr>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= setor.nome %></td>
     <td><%= setor.sigla %></td>
-    <td><%= link_to 'Show', setor %></td>
-    <td><%= link_to 'Edit', edit_setor_path(setor) %></td>
-    <td><%= link_to 'Destroy', setor, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Mostrar', setor %></td>
+    <td><%= link_to 'Editar', edit_setor_path(setor) %></td>
+    <td><%= link_to 'Excluir', setor, :confirm => 'Confirmar exclusao?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Setor', new_setor_path %>
+<%= link_to 'Novo Setor', new_setor_path %>
