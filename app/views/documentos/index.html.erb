@@ -17,8 +17,8 @@
     <td><%= documento.tipo %></td>
     <td><%= documento.assunto %></td>
     <td><%= documento.numero_de_processo %></td>
-    <td><%= documento.setor_origem %></td>
-    <td><%= documento.funcionario_origem %></td>
+    <td><%= documento.setor_origem.nome %></td>
+    <td><%= documento.funcionario_origem.nome %></td>
     <td><%= link_to 'Show', documento %></td>
     <td><%= link_to 'Edit', edit_documento_path(documento) %></td>
     <td><%= link_to 'Destroy', documento, :confirm => 'Are you sure?', :method => :delete %></td>
