@@ -8,8 +8,7 @@
  - cadastrar setores
  - cadastrar funcionários
  - login de funcionários
- - permitir que apenas funcionários vinculados ao setor no qual a
- solicitação está no momento possam fazer tramitações.
+ - permitir que apenas funcionários vinculados ao setor no qual a solicitação está no momento possam fazer tramitações.
 
 
  Cada documento deve conter:
@@ -39,3 +38,4 @@
  gem para login - devise
  gem para auterização - cancan
  rake db:rollback para desfazer o migrate
+

@@ -5,6 +5,7 @@ gem 'brazilian-rails', '~>3.0.0'
 gem 'formtastic'
 gem 'validation_reflection'
 gem 'inherited_resources'
+gem 'devise', '1.1.rc0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

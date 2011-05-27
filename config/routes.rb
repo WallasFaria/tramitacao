@@ -1,4 +1,6 @@
 Tramitacao::Application.routes.draw do
+  devise_for :usuarios
+
   resources :documentos do
     resources :doc_tramitacaos
   end
