@@ -60,6 +60,7 @@ GEM
     brstring (3.0.4)
       activesupport (>= 3.0.0)
     builder (2.1.2)
+    cancan (1.6.5)
     devise (1.1.rc0)
       warden (~> 0.10.3)
     erubis (2.6.6)
@@ -114,6 +115,7 @@ PLATFORMS
 
 DEPENDENCIES
   brazilian-rails (~> 3.0.0)
+  cancan
   devise (= 1.1.rc0)
   formtastic
   inherited_resources

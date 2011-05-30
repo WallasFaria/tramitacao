@@ -25,6 +25,7 @@
   <%= @documento.funcionario_origem.nome %>
 </p>
 
-
+<%= link_to 'tramitar', new_documento_doc_tramitacao_path(@documento) %>
+</p>
 <%= link_to 'Edit', edit_documento_path(@documento) %> |
 <%= link_to 'Back', documentos_path %>
