@@ -1,4 +1,4 @@
-<h1>Listing documentos</h1>
+<h1>Cadastrar documentos</h1>
 
 <table>
   <tr>
@@ -19,10 +19,10 @@
     <td><%= documento.numero_de_processo %></td>
     <td><%= documento.setor_origem.nome %></td>
     <td><%= documento.funcionario_origem.nome %></td>
-    <td><%= link_to 'Show', documento %></td>
+    <td><%= link_to 'Mostrar', documento %></td>
     <% if documento.pode_ser_excluido? %>
-      <td><%= link_to 'Edit', edit_documento_path(documento) %></td>
-      <td><%= link_to 'Destroy', documento, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Editar', edit_documento_path(documento) %></td>
+      <td><%= link_to 'Excluir', documento, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
     <% end %>
   </tr>
 <% end %>
@@ -30,4 +30,4 @@
 
 <br />
 
-<%= link_to 'New Documento', new_documento_path %>
+<%= link_to 'Novo Documento', new_documento_path %>
