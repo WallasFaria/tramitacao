@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20110519163115) do
   create_table "doc_tramitacaos", :force => true do |t|
     t.integer  "setor_destino_id"
     t.integer  "pessoa_destino_id"
-    t.date     "data"
-    t.time     "hora"
+    t.date     "data_hora"
+    t.integer  "documento_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
