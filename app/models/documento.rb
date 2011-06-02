@@ -4,6 +4,12 @@ class Documento < ActiveRecord::Base
   belongs_to :funcionario_origem, :class_name => 'Funcionario'
 
   before_destroy :so_excluir_se_nao_existe_tramitacao
+  
+  def setor_atual
+    setor = doc_tramitacao.last
+    setor.nome
+  end
+  
   def Documento.tipos
     ['Memorando','Circular interna']
   end

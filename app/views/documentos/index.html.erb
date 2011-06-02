@@ -20,8 +20,10 @@
     <td><%= documento.setor_origem.nome %></td>
     <td><%= documento.funcionario_origem.nome %></td>
     <td><%= link_to 'Show', documento %></td>
-    <td><%= link_to 'Edit', edit_documento_path(documento) %></td>
-    <td><%= link_to 'Destroy', documento, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if documento.pode_ser_excluido? %>
+      <td><%= link_to 'Edit', edit_documento_path(documento) %></td>
+      <td><%= link_to 'Destroy', documento, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

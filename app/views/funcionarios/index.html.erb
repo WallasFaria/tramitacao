@@ -15,7 +15,7 @@
   <tr>
     <td><%= funcionario.nome %></td>
     <td><%= funcionario.matricula %></td>
-    <td><%= funcionario.email %></td>
+    <td><%= funcionario.usuario.email %></td>
     <td><%= funcionario.setor.nome %></td>
     <td><%= link_to 'Show', funcionario %></td>
     <td><%= link_to 'Edit', edit_funcionario_path(funcionario) %></td>
