@@ -3,8 +3,6 @@
   <%= f.input :tipo, :as => :select, :collection => Documento.tipos %>
   <%= f.input :assunto %>
   <%= f.input :numero_de_processo %>
-  <%= f.input :setor_origem, :label_method => :nome %>
-  <%= f.input :funcionario_origem, :label_method => :nome %>
   <%= f.submit 'Salvar' %>
 
 <% end %>

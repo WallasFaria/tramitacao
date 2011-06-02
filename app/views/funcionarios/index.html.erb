@@ -1,4 +1,4 @@
-<h1>Listing funcionarios</h1>
+<h1>Cadastrar funcionarios</h1>
 
 <table>
   <tr>
@@ -17,13 +17,13 @@
     <td><%= funcionario.matricula %></td>
     <td><%= funcionario.usuario.email %></td>
     <td><%= funcionario.setor.nome %></td>
-    <td><%= link_to 'Show', funcionario %></td>
-    <td><%= link_to 'Edit', edit_funcionario_path(funcionario) %></td>
-    <td><%= link_to 'Destroy', funcionario, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Mostrar', funcionario %></td>
+    <td><%= link_to 'Editar', edit_funcionario_path(funcionario) %></td>
+    <td><%= link_to 'excluir', funcionario, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Funcionario', new_funcionario_path %>
+<%= link_to 'Novo Funcionario', new_funcionario_path %>

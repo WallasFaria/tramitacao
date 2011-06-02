@@ -15,7 +15,6 @@
   <%= @doc_tramitacao.data_hora %>
 </p>
 
+<%= link_to 'Editar', edit_documento_doc_tramitacao_path(@doc_tramitacao) %> |
+<%= link_to 'Voltar', @doc_tramitacao.documento %>
 
-
-<%= link_to 'Edit', edit_documento_doc_tramitacao_path(@doc_tramitacao) %> |
-<%= link_to 'Back', @doc_tramitacao.documento %>
