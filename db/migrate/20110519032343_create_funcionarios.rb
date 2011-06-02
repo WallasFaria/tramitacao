@@ -3,9 +3,9 @@ class CreateFuncionarios < ActiveRecord::Migration
     create_table :funcionarios do |t|
       t.string :nome
       t.string :matricula
-      t.string :email
       t.references :setor
-
+      t.references :usuario
+      
       t.timestamps
     end
   end

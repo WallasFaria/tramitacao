@@ -5,25 +5,14 @@
     <th>Setor destino</th>
     <th>Pessoa destino</th>
     <th>Data</th>
-    <th>Hora</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @doc_tramitacaos.each do |doc_tramitacao| %>
   <tr>
-    <td><%= doc_tramitacao.setor_destino %></td>
-    <td><%= doc_tramitacao.pessoa_destino %></td>
-    <td><%= doc_tramitacao.data %></td>
-    <td><%= doc_tramitacao.hora %></td>
-    <td><%= link_to 'Show', doc_tramitacao %></td>
-    <td><%= link_to 'Edit', edit_doc_tramitacao_path(doc_tramitacao) %></td>
-    <td><%= link_to 'Destroy', doc_tramitacao, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= doc_tramitacao.setor_destino.nome %></td>
+    <td><%= doc_tramitacao.pessoa_destino.nome %></td>
+    <td><%= doc_tramitacao.data_hora %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'Novo Documento tramitacao', new_doc_tramitacao_path %>

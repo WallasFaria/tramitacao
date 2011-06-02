@@ -5,11 +5,10 @@ class CreateDocTramitacaos < ActiveRecord::Migration
       t.references :pessoa_destino
       t.date :data_hora
       t.references :documento
-    
-	  t.timestamps
-	end
+
+      t.timestamps
+    end
   end
- 
 
   def self.down
     drop_table :doc_tramitacaos

@@ -16,7 +16,7 @@
     <td><%= funcionario.nome %></td>
     <td><%= funcionario.matricula %></td>
     <td><%= funcionario.email %></td>
-    <td><%= funcionario.setor %></td>
+    <td><%= funcionario.setor.nome %></td>
     <td><%= link_to 'Mostrar', funcionario %></td>
     <td><%= link_to 'Editar', edit_funcionario_path(funcionario) %></td>
     <td><%= link_to 'excluir', funcionario, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
