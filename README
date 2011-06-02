@@ -39,3 +39,8 @@
  gem para auterização - cancan
  rake db:rollback para desfazer o migrate
 
+ git
+ git remote add nome endereço
+ git pull nome master
+ git push origin master
+

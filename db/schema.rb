@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(:version => 20110527004354) do
     t.integer  "setor_destino_id"
     t.integer  "pessoa_destino_id"
     t.date     "data_hora"
-    t.integer  "documentos_id"
+    t.integer  "documento_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "documentos", :force => true do |t|
-    t.integer  "tipo"
+    t.string   "tipo"
     t.string   "assunto"
-    t.integer  "numero_de_processo"
+    t.string   "numero_de_processo"
     t.integer  "setor_origem_id"
     t.integer  "funcionario_origem_id"
     t.datetime "created_at"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(:version => 20110527004354) do
   create_table "funcionarios", :force => true do |t|
     t.string   "nome"
     t.string   "matricula"
-    t.string   "email"
     t.integer  "setor_id"
+    t.integer  "usuario_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

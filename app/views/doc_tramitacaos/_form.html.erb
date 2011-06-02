@@ -1,4 +1,4 @@
-<%= semantic_form_for(@doc_tramitacao) do |f| %>
+<%= semantic_form_for [@documento, @doc_tramitacao] do |f| %>
 
   <%= f.input :setor_destino, :label_method => :nome %>
   <%= f.input :pessoa_destino, :label_method => :nome %>

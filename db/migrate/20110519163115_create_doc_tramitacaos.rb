@@ -4,7 +4,7 @@ class CreateDocTramitacaos < ActiveRecord::Migration
       t.references :setor_destino
       t.references :pessoa_destino
       t.date :data_hora
-      t.references :documentos
+      t.references :documento
 
       t.timestamps
     end

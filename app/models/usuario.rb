@@ -1,4 +1,5 @@
 class Usuario < ActiveRecord::Base
+  has_one :funcionario
   # Include default devise modules. Others available are:
   # :token_authenticatable, :lockable, :timeoutable, :confirmable, and :activatable
   devise :database_authenticatable, :registerable, 

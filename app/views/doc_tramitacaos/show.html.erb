@@ -2,24 +2,20 @@
 
 <p>
   <b>Setor destino:</b>
-  <%= @doc_tramitacao.setor_destino %>
+  <%= @doc_tramitacao.setor_destino.nome %>
 </p>
 
 <p>
   <b>Pessoa destino:</b>
-  <%= @doc_tramitacao.pessoa_destino %>
+  <%= @doc_tramitacao.pessoa_destino.nome %>
 </p>
 
 <p>
   <b>Data:</b>
-  <%= @doc_tramitacao.data %>
-</p>
-
-<p>
-  <b>Hora:</b>
-  <%= @doc_tramitacao.hora %>
+  <%= @doc_tramitacao.data_hora %>
 </p>
 
 
-<%= link_to 'Edit', edit_doc_tramitacao_path(@doc_tramitacao) %> |
-<%= link_to 'Back', doc_tramitacaos_path %>
+
+<%= link_to 'Edit', edit_documento_doc_tramitacao_path(@doc_tramitacao) %> |
+<%= link_to 'Back', @doc_tramitacao.documento %>
