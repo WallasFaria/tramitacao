@@ -20,8 +20,10 @@
     <td><%= documento.setor_origem.nome %></td>
     <td><%= documento.funcionario_origem.nome %></td>
     <td><%= link_to 'Mostrar', documento %></td>
-    <td><%= link_to 'Editar', edit_documento_path(documento) %></td>
-    <td><%= link_to 'Excluir', documento, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+    <% if documento.pode_ser_excluido? %>
+      <td><%= link_to 'Editar', edit_documento_path(documento) %></td>
+      <td><%= link_to 'Excluir', documento, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
