@@ -1,7 +1,6 @@
 <%= semantic_form_for [@documento, @doc_tramitacao] do |f| %>
-
-  <%= f.input :setor_destino, :label_method => :nome %>
-  <%= f.input :pessoa_destino, :label_method => :nome %>
+ 
+  <div id="new"><%= f.input :pessoa_destino, :as => :select, :collection => @documento.pessoas_para_tramitar(current_user).map {|p| [p.nome, p.id]} %></div><p>
   <%= f.submit 'Salvar' %>
 
 <% end %>

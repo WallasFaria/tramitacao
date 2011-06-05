@@ -1,33 +1,21 @@
-<h1>Cadastrar documentos</h1>
-
-<table>
-  <tr>
-    <th>Tipo</th>
-    <th>Assunto</th>
-    <th>Numero de processo</th>
-    <th>Setor origem</th>
-    <th>Funcionario origem</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @documentos.each do |documento| %>
-  <tr>
-    <td><%= documento.tipo %></td>
-    <td><%= documento.assunto %></td>
-    <td><%= documento.numero_de_processo %></td>
-    <td><%= documento.setor_origem.nome %></td>
-    <td><%= documento.funcionario_origem.nome %></td>
-    <td><%= link_to 'Mostrar', documento %></td>
-    <% if documento.pode_ser_excluido? %>
-      <td><%= link_to 'Editar', edit_documento_path(documento) %></td>
-      <td><%= link_to 'Excluir', documento, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
-    <% end %>
-  </tr>
+<h2>Listagem de Documentos</h2>
+<% if flash[:error].blank? == false %>
+  <div id="error_authentication">
+    <%= flash[:error] %>
+  </div>
 <% end %>
-</table>
+  
+<% @documentos.each do |documento| %>
+<div class="documentos">
+  <div id="esq">
+    <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
+    Assunto: <%= documento.assunto %> 
+    <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
+    <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+  </div>
+  <div id="dir"><b><%= documento.doc_tramitacaos.count %>ª Tramitações</b> <p>Setor atual: <%= documento.setor_atual.sigla %></div>
+</div>
+<% end %>
 
 <br />
-
 <%= link_to 'Novo Documento', new_documento_path %>

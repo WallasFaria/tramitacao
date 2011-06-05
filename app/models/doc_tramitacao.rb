@@ -1,6 +1,5 @@
 class DocTramitacao < ActiveRecord::Base
   belongs_to :documento
-  belongs_to :setor_destino, :class_name => 'Setor'
   belongs_to :pessoa_destino, :class_name => 'Funcionario'
   before_create :gerar_data_hora
 

@@ -44,3 +44,11 @@
  git pull nome master
  git push origin master
 
+ %h3 Encaminhar solicitação
+
+= semantic_form_for @form_encaminhamento, :as => :form_encaminhamento, :url => {:action => :encaminhar }, :method => :post do |form|
+  = form.input :encaminhar_para, :as => :select, :collection => @solicitacao.areas_possiveis_para_encaminhamento.map {|a| [a.nome, a.id]}
+  = form.input :obs, :label => 'Observações'
+  = form.commit_button 'Encaminhar'
+
+= link_to 'Voltar', solicitante_solicitacao_path(@solicitacao.solicitante, @solicitacao)

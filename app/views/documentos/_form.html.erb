@@ -1,8 +1,8 @@
 <%= semantic_form_for(@documento) do |f| %>
-
+<div id="new">
   <%= f.input :tipo, :as => :select, :collection => Documento.tipos %>
   <%= f.input :assunto %>
   <%= f.input :numero_de_processo %>
-  <%= f.submit 'Salvar' %>
-
+</div>
+<p><%= f.submit 'Salvar' %>
 <% end %>

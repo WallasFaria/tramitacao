@@ -1,4 +1,4 @@
-<h1>Cadastrar funcionarios</h1>
+<h2>Listagem de funcionarios</h2>
 
 <table>
   <tr>
@@ -15,7 +15,7 @@
   <tr>
     <td><%= funcionario.nome %></td>
     <td><%= funcionario.matricula %></td>
-    <td><%= funcionario.usuario.email %></td>
+    <td><%= funcionario.user.email %></td>
     <td><%= funcionario.setor.nome %></td>
     <td><%= link_to 'Mostrar', funcionario %></td>
     <td><%= link_to 'Editar', edit_funcionario_path(funcionario) %></td>

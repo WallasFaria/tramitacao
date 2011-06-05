@@ -2,7 +2,7 @@
 
 <p>
   <b>Setor destino:</b>
-  <%= @doc_tramitacao.setor_destino.nome %>
+  <%= @doc_tramitacao.pessoa_destino.setor.nome %>
 </p>
 
 <p>
@@ -14,7 +14,8 @@
   <b>Data:</b>
   <%= @doc_tramitacao.data_hora %>
 </p>
-
-<%= link_to 'Editar', edit_documento_doc_tramitacao_path(@doc_tramitacao) %> |
+<% if can? :edit, @doc_tramitacao %>
+  <%= link_to 'Editar', edit_documento_doc_tramitacao_path(@doc_tramitacao) %> |
+<% end %>
 <%= link_to 'Voltar', @doc_tramitacao.documento %>
 

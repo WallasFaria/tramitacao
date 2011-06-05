@@ -1,25 +1,13 @@
-<h1>Cadastrar de setores</h1>
-
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Sigla</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h2>Listagem de setores</h2>
 <% @setors.each do |setor| %>
-  <tr>
-    <td><%= setor.nome %></td>
-    <td><%= setor.sigla %></td>
-    <td><%= link_to 'Mostrar', setor %></td>
-    <td><%= link_to 'Editar', edit_setor_path(setor) %></td>
-    <td><%= link_to 'Excluir', setor, :confirm => 'Confirmar exclusao?', :method => :delete %></td>
-  </tr>
+<div class="setores">
+  <div id="esq">
+    <h3><%= link_to setor.nome , setor %></h3>
+    Sigla: <%= setor.sigla %> <br>
+    Possui: <%= setor.funcionarios.count %> funcionarios
+  </div>
+ </div>
 <% end %>
-</table>
-
 <br />
 
 <%= link_to 'Novo Setor', new_setor_path %>

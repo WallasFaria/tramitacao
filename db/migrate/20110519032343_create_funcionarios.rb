@@ -4,7 +4,7 @@ class CreateFuncionarios < ActiveRecord::Migration
       t.string :nome
       t.string :matricula
       t.references :setor
-      t.references :usuario
+      t.references :user
       
       t.timestamps
     end

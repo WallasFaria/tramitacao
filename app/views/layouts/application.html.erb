@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
 <html>
 <head>
   <title>Tramitacao</title>
@@ -7,15 +7,60 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
- <div id="user_nav">
-  <% if usuario_signed_in? %>
-    Signed in as <%= current_usuario.email %>. Not you?
-    <%= link_to "Sign out", destroy_usuario_session_path %>
+<!-- ---------------------------------------TOPO---------------------------------------- -->
+<div id="header">
+  <div id="menu">
+			  <ul id="nav">
+				  <li><a href="/" title="Visit my website">Documentos</a></li>
+				  <li id="active"><a href="/setors">Setores</a></li>
+				  <li><a href="/funcionarios">Funcionarios</a></li>
+				  <li><a href="#">Services</a>  </li>
+			  </ul>
+  </div>
+  <div id="log">
+    <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Não é voçê?
+    <%= link_to "Sign out", destroy_user_session_path %>
   <% else %>
-    <%= link_to "Sign up", new_usuario_registration_path %> or <%= link_to "sign in", new_usuario_session_path %>
+    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
   <% end %>
+  </div>
+  <h1> <span class="big">TRAMITAR</span> <br> Controle de documentos </h1>
 </div>
-<%= yield %>
+<!-- --------------------------------------TOPO FIM------------------------------------- -->
 
+<div id="wrap">
+  <div id="gutter"></div>
+
+<!-- ---------------------------------COLUNA PRINCIPAL---------------------------------- -->
+  <div id="col1">
+       <%= yield %> 
+  </div>
+<!-- ---------------------------------COLUNA PRINCIPAL FIM------------------------------ -->
+
+
+
+<!-- ----------------------------------COLUNA LATERAL----------------------------------- -->
+  <div id="col2">
+    <h2>Tramitações</h2>
+    <div id="navcontainer">
+			    <ul id="navlist">
+				    <li><a href="/setors" title="tramitações por setor">Por Setor</a></li>
+				    <li><a href="/documentos" title="tramitações por documento">Por Documento</a></li>
+				    <li><a href="/funcionarios" title="tramitações por funcionario">Por Funcionario</a></li>
+				  </ul> 
+    </div>
+
+    <h3>News &amp; Update</h3>
+
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut turpis ligula, accumsan vel, ornare eu, ullamcorper id, odio. Mauris ac neque. Fusce dictum. Suspendisse vehicula est vel nisl. Nunc tempor pede vel velit.</p>
+
+    <div id="footer">
+      <p><a href="#">homepage</a> | <a href="mailto:denise@mitchinson.net">contact</a> | &copy; 2008 Anyone | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> |  Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0  License</a></p>
+    </div>
+  </div>
+<!-- -------------------------------COLUNA LATERAL FIM--------------------------------- -->
+
+</div>
 </body>
 </html>

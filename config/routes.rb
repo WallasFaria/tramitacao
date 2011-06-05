@@ -1,10 +1,10 @@
 Tramitacao::Application.routes.draw do
-  devise_for :usuarios
+  devise_for :users
 
   resources :documentos do
     resources :doc_tramitacaos
   end
-# link_to 'tramitar', new_doc_tramitacao_documento_path(documento)
+
   resources :setors
 
   resources :funcionarios
