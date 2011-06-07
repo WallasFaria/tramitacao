@@ -1,0 +1,192 @@
+body{
+margin: 0;
+padding: 0;
+font: 75% "Trebuchet MS", arial, helvetica, sans-serif;
+line-height: 2em;
+color: #666;
+background: url(/images/bg.jpg) repeat-x;
+}
+						/*LINKS*/
+a {
+text-decoration: none;
+color: #006699;
+background: inherit;
+}
+a:hover {
+text-decoration: underline;
+color: #aaa;
+background: inherit;
+}
+a img {
+border: 0;
+}
+						/*TYPO*/
+p {
+padding: 3px;
+}
+h1 {
+margin:0;
+padding: 3em 12em;
+letter-spacing: 5px;
+font: 200% "Century Gothic", sans-serif;
+color: #fff;
+background: inherit;
+}
+h2 {
+margin-top: 30px;
+padding: 0.5em 1.5em;
+text-transform: uppercase;
+letter-spacing: 5px;
+font-size: 160%;
+color: #666;
+background: url(/images/1.gif) no-repeat;
+}
+h3 {
+margin: 0px;
+letter-spacing: 3px;
+font-size: 140%;
+color: #666;
+}
+blockquote {
+margin : 10px 0;
+padding : 15px;
+font-style : italic;
+color : #000;
+background : #f6f6f6;
+}
+.big {
+letter-spacing: 5px;
+font-size: 150%;
+color: #86C946;
+}
+em {
+font-size: 90%;
+color: #aaa;
+}
+
+
+							/*-----------------------------STRUCTURE-------------------------------------*/
+						/*HORIZONTAL MENU*/
+#menu ul {
+width : 100%;
+margin : 5px 0;
+padding: 3px 0;
+text-align : center;
+line-height : 17px;
+color : #fff;
+background : transparent;
+}
+#menu ul li {
+display : inline;
+padding: 5px 0;
+}
+#menu ul li a {
+padding: 5px 15px;
+text-decoration : underline;
+color : #247CAA;
+}
+#menu ul li a:hover {
+color : #5EA730;
+background : transparent;
+}
+#menu #active {
+background : transparent;
+}		
+#header{
+height: 200px;
+margin-bottom: 2em;
+border-bottom: 0 solid #eee;
+background: transparent;
+color: #000;
+}
+						/*COLUMNS CONTAINER*/
+#wrap {
+margin: 0 auto;
+padding: 0;
+width: 900px;
+}
+						/*COLUMNS*/
+#gutter{
+float: left;
+width: 3%;
+height: 1px;
+}
+#col1{
+float: left;
+width:65%;
+margin-bottom: 1em;
+border-right: 1px solid #eee;
+padding-right: 3%;
+}
+#col2{
+float: left;
+width: 20%;
+margin-left: 6%;
+margin-bottom: 1em;
+padding-right: 1%;
+}
+						/*SIDE MENU*/
+#navcontainer ul {
+margin: 20px 0 20px 0;
+padding: 0;
+list-style-type: none;
+letter-spacing: 1px;
+background: #fff;
+color: #666;
+}
+#navcontainer ul li a {
+padding-left: 15px;
+text-align: left;
+text-decoration: none;
+color: #069;
+background: transparent url(/images/list-off.gif) left center no-repeat;
+}
+#navcontainer ul li a:hover {
+color: #5EA730;
+background: transparent url(/images/list-on.gif) left center no-repeat;
+}
+#navcontainer ul li a#current {
+background: transparent url(/images/list-active.gif) left center no-repeat;
+color: #000;
+}
+						/*FOOTER*/
+#footer {
+clear: both;
+height: 50px;
+background: #fff;
+border-top: 0 solid #eee;
+color: #000;
+padding: 5px;
+}
+
+.documentos {
+  line-height: 1.5em;
+	width: 500px;
+	height: 80px;
+	padding-right: 16px;
+	padding-left: 80px;
+	padding-top: 12px;
+	background:#fff url(/images/doc.png) no-repeat;
+}
+.documentos a{color: #666;}
+.documentos #dir {width: 100px; height: 60px; float: right; margin-right: 7em; margin-top: 0.2em;}
+.documentos #esq {	position: relative; width: 300; float: left;}
+
+.setores {
+  line-height: 1.5em;
+	width: 500px;
+	height: 80px;
+	padding-right: 16px;
+	padding-left: 80px;
+	padding-top: 12px;
+	background:#fff url(/images/setor.png) no-repeat;
+}
+.setores a{color: #666;}
+.setores #dir {width: 100px; height: 60px; float: right; margin-right: 7em; margin-top: 0.2em;}
+.setores #esq {	position: relative;	float: left;}
+
+#log {position: relative;	float: right; margin: 0em 1em 0em 0em; color: #666;}
+#new{width: 200px; line-height: 2em;}
+#new li{height: 56px;}
+#new li label{float: top;}
+#new li input, select{width:190px; margin-left: 0em; float: bottom;}
