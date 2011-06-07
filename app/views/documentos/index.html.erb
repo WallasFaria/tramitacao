@@ -13,7 +13,7 @@
     <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
     <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
   </div>
-  <div id="dir"><b><%= documento.doc_tramitacaos.count %>ª Tramitações</b> <p>Setor atual: <%= documento.setor_atual.sigla %></div>
+  <div id="dir"><b><%= documento.doc_tramitacaos.count %> Tramitações</b> <p>Setor atual: <%= documento.setor_atual.sigla %></div>
 </div>
 <% end %>
 

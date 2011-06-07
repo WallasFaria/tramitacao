@@ -2,7 +2,6 @@ class Documento < ActiveRecord::Base
   has_many :doc_tramitacaos, :order => 'data_hora'
   belongs_to :setor_origem, :class_name => 'Setor'
   belongs_to :funcionario_origem, :class_name => 'Funcionario'
-   
   before_destroy :so_excluir_se_nao_existe_tramitacao
   
   def setor_atual

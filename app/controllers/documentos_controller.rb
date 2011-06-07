@@ -26,7 +26,7 @@ class DocumentosController < InheritedResources::Base
   end
 
   def edit
-    @documento = Documentos.find(params[:id])
+    @documento = Documento.find(params[:id])
     unautorized! if cannot? :update, @documento
   end
 
