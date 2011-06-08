@@ -42,14 +42,26 @@
 
 <!-- ----------------------------------COLUNA LATERAL----------------------------------- -->
   <div id="col2">
-    <h2>Tramitações</h2>
+    <h2>Documentos</h2>
     <div id="navcontainer">
 			    <ul id="navlist">
-				    <li><a href="/setors" title="tramitações por setor">Por Setor</a></li>
-				    <li><a href="/documentos" title="tramitações por documento">Por Documento</a></li>
-				    <li><a href="/funcionarios" title="tramitações por funcionario">Por Funcionario</a></li>
+				    <li><a href="/setors" title="documentos por setor">Por Setor</a></li>
+				    <li><a href="/funcionarios" title="documentos por funcionario">Por Funcionario</a></li>
+				    <li><a href="/documentos" title="mostrar todos os documentos">Mostrar todos</a></li>
+				    <% if user_signed_in? && current_user.funcionario.blank? == false %><li><a href="<%= new_documento_path %>" title="criar um novo documento">Criar novo</a></li><% end %>
 				  </ul> 
     </div>
+    
+    <% if user_signed_in? %>
+      <h2>Seções</h2>    
+      <div id="navcontainer">
+			      <ul id="navlist">
+				      <li><a href="/funcionarios/<%= current_user.funcionario.id %>" title="Mostrar meus documentos">Meus documentos</a></li>
+				      <li><a href="/setors/<%= current_user.funcionario.setor.id %>" title="Mostrar documentos do meu setor">Meu setor</a></li>
+				      <li><%= link_to "Sair", destroy_user_session_path %></li>
+				    </ul> 
+      </div>
+    <% end %>
 
     <h3>News &amp; Update</h3>
 

@@ -1,25 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 
-<p>
-  <b>Nome:</b>
-  <%= @funcionario.nome %>
-</p>
+  <h2><%= @funcionario.nome %></h2>
 
-<p>
-  <b>Matricula:</b>
-  <%= @funcionario.matricula %>
-</p>
+  <h4>
+    <b> Email:</b> <%= @funcionario.user.email %>, 
+    <b>Setor:</b> <%= @funcionario.setor.nome %> - 
+    <b>Matricula:</b> <%= @funcionario.matricula %>
+  </h4>
+  
+  <% if @funcionario.documentos.blank? != true %>
+    <p id="subtitulo">Documentos criado por <%= @funcionario.nome %>.</p>
+    <% @funcionario.documentos.each do |documento| %>
+      <div class="documentos">
+        <div id="esq">
+          <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
+          Assunto: <%= documento.assunto %> 
+          <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
+          <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+        </div>
+        <div id="dir"><b><%= documento.doc_tramitacaos.count %> Tramitações</b> <p>Setor atual: <%= documento.setor_atual.sigla %></div>
+      </div>
+    <% end %>
+  <% end %>
 
-<p>
-  <b>Email:</b>
-  <%= @funcionario.user.email %>
-</p>
+  <% if @funcionario.documentos_comigo.blank? != true %>
+    <p id="subtitulo">Documentos com <%= @funcionario.nome %> no atual momento.</p>
+    <% @funcionario.documentos_comigo.each do |documento| %>
+      <div class="documentos">
+        <div id="esq">
+          <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
+          Assunto: <%= documento.assunto %> 
+          <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
+          <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+        </div>
+        <div id="dir">
+          <% if documento.setor_atual == current_user.funcionario.setor %>
+            <b id="tramitar"><%= link_to 'Tramitar', new_documento_doc_tramitacao_path(documento) %></b> <p>
+          <% end %>
+          Setor atual: <%= documento.setor_atual.sigla %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 
-<p>
-  <b>Setor:</b>
-  <%= @funcionario.setor.nome %>
-</p>
-
-
-<%= link_to 'Editar', edit_funcionario_path(@funcionario) %> |
-<%= link_to 'Voltar', documentos_path %>
+<%= link_to 'Voltar', funcionarios_path %>

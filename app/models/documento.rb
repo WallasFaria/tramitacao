@@ -5,11 +5,11 @@ class Documento < ActiveRecord::Base
   before_destroy :so_excluir_se_nao_existe_tramitacao
   
   def setor_atual
-    if doc_tramitacaos.blank?
-      self.setor_origem
-    else
-      doc_tramitacaos.last.pessoa_destino.setor
-    end
+    return self.setor_origem if doc_tramitacaos.blank? else return doc_tramitacaos.last.pessoa_destino.setor
+  end
+
+  def funcionario_atual
+    return self.funcionario_origem if doc_tramitacaos.blank? else return doc_tramitacaos.last.pessoa_destino
   end
 
   def Documento.tipos

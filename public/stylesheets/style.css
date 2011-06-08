@@ -11,10 +11,10 @@ a {
 text-decoration: none;
 color: #006699;
 background: inherit;
+margin: 1em 0em 0em 1em
 }
 a:hover {
-text-decoration: underline;
-color: #aaa;
+color: #5EA730;
 background: inherit;
 }
 a img {
@@ -43,9 +43,14 @@ background: url(/images/1.gif) no-repeat;
 }
 h3 {
 margin: 0px;
-letter-spacing: 3px;
+letter-spacing: 1px;
 font-size: 140%;
 color: #666;
+}
+h4 {
+font-size: 115%;
+margin: -1em 0em 1em 2.2em;
+color: #686;
 }
 blockquote {
 margin : 10px 0;
@@ -168,7 +173,7 @@ padding: 5px;
 	padding-top: 12px;
 	background:#fff url(/images/doc.png) no-repeat;
 }
-.documentos a{color: #666;}
+.documentos a{color: #666; margin: 0em 0em 0.5em 0em;}.documentos a:hover{color: #5EA730;}
 .documentos #dir {width: 100px; height: 60px; float: right; margin-right: 7em; margin-top: 0.2em;}
 .documentos #esq {	position: relative; width: 300; float: left;}
 
@@ -181,7 +186,20 @@ padding: 5px;
 	padding-top: 12px;
 	background:#fff url(/images/setor.png) no-repeat;
 }
-.setores a{color: #666;}
+.funcionarios a{color: #666; margin: 0em 0em 0.5em 0em;}.funcionarios a:hover{color: #5EA730;}
+.funcionarios #dir {width: 100px; height: 60px; float: right; margin-right: 7em; margin-top: 0.2em;}
+.funcionarios #esq {	position: relative;	float: left;}
+
+.funcionarios {
+  line-height: 1.5em;
+	width: 500px;
+	height: 80px;
+	padding-right: 16px;
+	padding-left: 80px;
+	padding-top: 12px;
+	background:#fff url(/images/user.png) no-repeat;
+}
+.setores a{color: #666; margin: 0em 0em 0.5em 0em;}.setores a:hover{color: #5EA730;}
 .setores #dir {width: 100px; height: 60px; float: right; margin-right: 7em; margin-top: 0.2em;}
 .setores #esq {	position: relative;	float: left;}
 
@@ -190,3 +208,16 @@ padding: 5px;
 #new li{height: 56px;}
 #new li label{float: top;}
 #new li input, select{width:190px; margin-left: 0em; float: bottom;}
+#subtitulo {line-height: 1.5em; margin: 0em 0em -0.5em 1.2em; color: #688;}
+
+#tramitar a {
+  width: 
+  text-align: center;
+  text-decoration: none;
+  color: #069;
+  background: transparent url(/images/tramitar-off.png) left center no-repeat;
+}
+#tramitar a:hover {
+  color: #5EA730;
+  background: transparent url(/images/tramitar-on.png) left center no-repeat;
+}

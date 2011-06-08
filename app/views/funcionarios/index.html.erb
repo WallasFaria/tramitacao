@@ -1,29 +1,16 @@
 <h2>Listagem de funcionarios</h2>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Matricula</th>
-    <th>Email</th>
-    <th>Setor</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @funcionarios.each do |funcionario| %>
-  <tr>
-    <td><%= funcionario.nome %></td>
-    <td><%= funcionario.matricula %></td>
-    <td><%= funcionario.user.email %></td>
-    <td><%= funcionario.setor.nome %></td>
-    <td><%= link_to 'Mostrar', funcionario %></td>
-    <td><%= link_to 'Editar', edit_funcionario_path(funcionario) %></td>
-    <td><%= link_to 'excluir', funcionario, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
-  </tr>
+  <div class="funcionarios">
+    <div id="esq">
+      <h3><%= link_to funcionario.nome, funcionario %></h3>
+      Email: <%= funcionario.user.email %> 
+      <table><tr><th width="110px" align="left">Matricule: <%= funcionario.matricula %>,</th>
+      <th> Setor: <%= funcionario.setor.nome %> </th></tr></table>
+    </div>
+    <div id="dir"><b>Possui <%= funcionario.documentos.count %> documentos</b></div>
+  </div>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'Novo Funcionario', new_funcionario_path %>
