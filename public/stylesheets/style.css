@@ -48,9 +48,9 @@ font-size: 140%;
 color: #666;
 }
 h4 {
-font-size: 115%;
+font-size: 110%;
 margin: -1em 0em 1em 2.2em;
-color: #686;
+color: #688;
 }
 blockquote {
 margin : 10px 0;
@@ -208,7 +208,7 @@ padding: 5px;
 #new li{height: 56px;}
 #new li label{float: top;}
 #new li input, select{width:190px; margin-left: 0em; float: bottom;}
-#subtitulo {line-height: 1.5em; margin: 0em 0em -0.5em 1.2em; color: #688;}
+#subtitulo {line-height: 2em; margin: 0em 0em -0.5em 1.2em; color: #688; font-size: 120%;}
 
 #tramitar a {
   width: 

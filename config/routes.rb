@@ -7,7 +7,9 @@ Tramitacao::Application.routes.draw do
 
   resources :setors
 
-  resources :funcionarios
+  resources :funcionarios do
+    get :logado, :on => :collection
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +60,7 @@ Tramitacao::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "documentos#index"
+  root :to => "funcionarios#logado"
 
   # See how all your routes lay out with "rake routes"
 

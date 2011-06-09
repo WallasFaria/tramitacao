@@ -10,5 +10,9 @@ class FuncionariosController < InheritedResources::Base
       render :action => :new
     end
   end
+
+  def logado
+    redirect_to current_user.funcionario
+  end
   
 end

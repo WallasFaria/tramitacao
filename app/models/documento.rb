@@ -5,13 +5,14 @@ class Documento < ActiveRecord::Base
   before_destroy :so_excluir_se_nao_existe_tramitacao
   
   def setor_atual
-    return self.setor_origem if doc_tramitacaos.blank? else return doc_tramitacaos.last.pessoa_destino.setor
+    tramitacoes = doc_tramitacaos.reject {|t| t.id.nil? }
+    tramitacoes.blank? ? self.setor_origem : tramitacoes.last.pessoa_destino.try(:setor)
   end
 
   def funcionario_atual
-    return self.funcionario_origem if doc_tramitacaos.blank? else return doc_tramitacaos.last.pessoa_destino
+    doc_tramitacaos.blank? ? self.funcionario_origem : doc_tramitacaos.last.pessoa_destino
   end
-
+ 
   def Documento.tipos
     ['Memorando','Circular interna']
   end
@@ -20,8 +21,8 @@ class Documento < ActiveRecord::Base
     doc_tramitacaos.blank?
   end
 
-  def pessoas_para_tramitar(user)
-    Funcionario.all.reject {|f| f.setor.nome == user.funcionario.setor.nome}  
+  def pessoas_para_tramitar
+    Funcionario.all.reject {|f| f.setor == setor_atual }  
   end
 
   private

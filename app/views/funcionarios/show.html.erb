@@ -1,5 +1,11 @@
 <div id="notice"><%= notice %></div>
 
+<% if flash[:error].present? %>
+  <div id="error_authentication">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+
   <h2><%= @funcionario.nome %></h2>
 
   <h4>
@@ -8,7 +14,7 @@
     <b>Matricula:</b> <%= @funcionario.matricula %>
   </h4>
   
-  <% if @funcionario.documentos.blank? != true %>
+  <% if @funcionario.documentos.present? %>
     <p id="subtitulo">Documentos criado por <%= @funcionario.nome %>.</p>
     <% @funcionario.documentos.each do |documento| %>
       <div class="documentos">
@@ -23,7 +29,7 @@
     <% end %>
   <% end %>
 
-  <% if @funcionario.documentos_comigo.blank? != true %>
+  <% if @funcionario.documentos_comigo.present? %>
     <p id="subtitulo">Documentos com <%= @funcionario.nome %> no atual momento.</p>
     <% @funcionario.documentos_comigo.each do |documento| %>
       <div class="documentos">

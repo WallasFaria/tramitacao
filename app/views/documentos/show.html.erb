@@ -1,29 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 
-<p>
-  <b>Tipo:</b>
-  <%= @documento.tipo %>
-</p>
+  <h2><%= @documento.tipo %> - <%= @documento.numero_de_processo %> </h2>
 
-<p>
-  <b>Assunto:</b>
-  <%= @documento.assunto %>
-</p>
+  <h4>
+    <b>Assunto: </b> <%= @documento.assunto %><br> 
+    <b>Criado por </b> <%= @documento.funcionario_origem.nome %>,  
+    <b>Setor de </b> <%= @documento.setor_origem.nome %>
+  </h4>
 
-<p>
-  <b>Numero de processo:</b>
-  <%= @documento.numero_de_processo %>
-</p>
-
-<p>
-  <b>Setor origem:</b>
-  <%= @documento.setor_origem.nome %>
-</p>
-
-<p>
-  <b>Funcionario origem:</b>
-  <%= @documento.funcionario_origem.nome %>
-</p>
 
 <fieldset>
 <table>

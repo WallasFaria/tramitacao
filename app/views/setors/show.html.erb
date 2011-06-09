@@ -1,15 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
+ <h2><%= @setor.nome %> - <%= @setor.sigla %></h2>
 
-<p>
-  <b>Nome:</b>
-  <%= @setor.nome %>
-</p>
+  <% if @setor.documentos.present? %>
+    <p id="subtitulo">Documentos do setor.</p>
+    <% @setor.documentos.each do |documento| %>
+      <div class="documentos">
+        <div id="esq">
+          <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
+          Assunto: <%= documento.assunto %> 
+          <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
+          <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+        </div>
+        <div id="dir"><b><%= documento.doc_tramitacaos.count %> Tramitações</b> <p>Setor atual: <%= documento.setor_atual.sigla %></div>
+      </div>
+    <% end %>
+  <% end %>
 
-<p>
-  <b>Sigla:</b>
-  <%= @setor.sigla %>
-</p>
+  <% if @setor.documentos_comigo.present? %>
+    <p id="subtitulo">Documentos que estão neste setor no atual momento.</p>
+    <% @setor.documentos_comigo.each do |documento| %>
+      <div class="documentos">
+        <div id="esq">
+          <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
+          Assunto: <%= documento.assunto %> 
+          <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
+          <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+        </div>
+        <div id="dir">
+          <% if documento.setor_atual == current_user.funcionario.setor %>
+            <b id="tramitar"><%= link_to 'Tramitar', new_documento_doc_tramitacao_path(documento) %></b> <p>
+          <% end %>
+          Setor atual: <%= documento.setor_atual.sigla %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 
 
-<%= link_to 'Editar', edit_setor_path(@setor) %> |
+  
 <%= link_to 'Voltar', setors_path %>

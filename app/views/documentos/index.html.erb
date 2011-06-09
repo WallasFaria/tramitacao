@@ -1,9 +1,4 @@
 <h2>Listagem de Documentos</h2>
-<% if flash[:error].blank? == false %>
-  <div id="error_authentication">
-    <%= flash[:error] %>
-  </div>
-<% end %>
   
 <% @documentos.each do |documento| %>
 <div class="documentos">
