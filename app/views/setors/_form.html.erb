@@ -1,26 +1,9 @@
-<%= form_for(@setor) do |f| %>
-  <% if @setor.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@setor.errors.count, "error") %> prohibited this setor from being saved:</h2>
+<%= semantic_form_for(@setor) do |f| %>
 
-      <ul>
-      <% @setor.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div id="new">
+    <%= f.input :nome %>
+    <%= f.input :sigla %>
+  </div>
+  <%= f.submit 'Salvar' %>
 
-  <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :sigla %><br />
-    <%= f.text_field :sigla %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

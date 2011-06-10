@@ -1,8 +1,10 @@
 <%= semantic_form_for(@funcionario) do |f| %>
+
   <div id="new">  
     <%= f.input :nome %>
     <%= f.input :matricula %>
     <%= f.input :setor, :label_method => :nome %>
   </div>
-    <p><%= f.submit 'Salvar' %>
+  <%= f.submit 'Salvar' %>
+
 <% end %>
