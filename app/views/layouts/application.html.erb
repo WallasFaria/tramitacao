@@ -52,7 +52,7 @@
 				  </ul> 
     </div>
     
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.funcionario.present? %>
       <h2>Seções</h2>    
       <div id="navcontainer">
 			      <ul id="navlist">
@@ -62,10 +62,6 @@
 				    </ul> 
       </div>
     <% end %>
-
-    <h3>News &amp; Update</h3>
-
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut turpis ligula, accumsan vel, ornare eu, ullamcorper id, odio. Mauris ac neque. Fusce dictum. Suspendisse vehicula est vel nisl. Nunc tempor pede vel velit.</p>
 
     <div id="footer">
       <p><a href="#">homepage</a> | <a href="mailto:denise@mitchinson.net">contact</a> | &copy; 2008 Anyone | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> |  Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0  License</a></p>

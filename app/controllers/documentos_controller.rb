@@ -1,5 +1,6 @@
 class DocumentosController < InheritedResources::Base
   before_filter :authenticate_user!
+  load_and_authorize_resource :documento
 
   def create
     @documento = Documento.new(params[:documento])
@@ -23,11 +24,6 @@ class DocumentosController < InheritedResources::Base
         format.xml  { render :xml => @documentos }
       end
     end
-  end
-
-  def edit
-    @documento = Documento.find(params[:id])
-    unautorized! if cannot? :update, @documento
   end
 
 end

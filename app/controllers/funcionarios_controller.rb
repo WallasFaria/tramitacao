@@ -1,6 +1,7 @@
 class FuncionariosController < InheritedResources::Base
   before_filter :authenticate_user!
-
+  load_and_authorize_resource :funcionario
+    
   def create
     @funcionario = Funcionario.new(params[:funcionario])
     @funcionario.user = current_user
@@ -12,7 +13,11 @@ class FuncionariosController < InheritedResources::Base
   end
 
   def logado
-    redirect_to current_user.funcionario
+    if current_user.funcionario.blank?
+      redirect_to new_funcionario_path
+    else
+      redirect_to current_user.funcionario
+    end
   end
   
 end
