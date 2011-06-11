@@ -8,45 +8,49 @@
 
   <h2><%= @funcionario.nome %></h2>
 
-  <h4>
+  <h4 id="show" class="round">
     <b> Email:</b> <%= @funcionario.user.email %>, 
     <b>Setor:</b> <%= @funcionario.setor.nome %> - 
     <b>Matricula:</b> <%= @funcionario.matricula %>
   </h4>
   
   <% if @funcionario.documentos.present? %>
-    <p id="subtitulo">Documentos criado por <%= @funcionario.nome %>.</p>
-    <% @funcionario.documentos.each do |documento| %>
-      <div class="documentos">
-        <div id="esq">
-          <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
-          Assunto: <%= documento.assunto %> 
-          <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
-          <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+    <fieldset class="round">
+      <div id="subtitulo" class="round">Documentos criado por <%= @funcionario.nome %></div>
+      <% @funcionario.documentos.each do |documento| %>
+        <div class="documentos">
+          <div id="esq">
+            <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
+            Assunto: <%= documento.assunto %> 
+            <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
+            <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+          </div>
+          <div id="dir"><b><%= documento.doc_tramitacaos.count %> Tramitações</b> <p>Setor atual: <%= documento.setor_atual.sigla %></div>
         </div>
-        <div id="dir"><b><%= documento.doc_tramitacaos.count %> Tramitações</b> <p>Setor atual: <%= documento.setor_atual.sigla %></div>
-      </div>
-    <% end %>
+      <% end %>
+    </fieldset>
   <% end %>
 
   <% if @funcionario.documentos_comigo.present? %>
-    <p id="subtitulo">Documentos com <%= @funcionario.nome %> no atual momento.</p>
-    <% @funcionario.documentos_comigo.each do |documento| %>
-      <div class="documentos">
-        <div id="esq">
-          <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
-          Assunto: <%= documento.assunto %> 
-          <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
-          <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+    <fieldset class="round">
+      <div id="subtitulo" class="round">Documentos com <%= @funcionario.nome %> no atual momento</div>
+      <% @funcionario.documentos_comigo.each do |documento| %>
+        <div class="documentos">
+          <div id="esq">
+            <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
+            Assunto: <%= documento.assunto %> 
+            <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
+            <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+          </div>
+          <div id="dir">
+            <% if documento.setor_atual == current_user.funcionario.setor %>
+              <b id="tramitar"><%= link_to 'Tramitar', new_documento_doc_tramitacao_path(documento) %></b> <p>
+            <% end %>
+            Setor atual: <%= documento.setor_atual.sigla %>
+          </div>
         </div>
-        <div id="dir">
-          <% if documento.setor_atual == current_user.funcionario.setor %>
-            <b id="tramitar"><%= link_to 'Tramitar', new_documento_doc_tramitacao_path(documento) %></b> <p>
-          <% end %>
-          Setor atual: <%= documento.setor_atual.sigla %>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </fieldset>
   <% end %>
 
 <%= link_to 'Voltar', funcionarios_path %>

@@ -2,36 +2,26 @@
 
   <h2><%= @documento.tipo %> - <%= @documento.numero_de_processo %> </h2>
 
-  <h4>
+  <h4 id="show" class="round">
     <b>Assunto: </b> <%= @documento.assunto %><br> 
     <b>Criado por </b> <%= @documento.funcionario_origem.nome %>,  
     <b>Setor de </b> <%= @documento.setor_origem.nome %>
   </h4>
 
+  <fieldset class="round">
+    <div id="subtitulo">tramitações</div>
+    <% @documento.doc_tramitacaos.each do |doc_tramitacao| %>
+      <div id="data">tramitou p/ ---------------> <%= doc_tramitacao.data_hora %></div>
+      <div id="tramitacoes" class="round">
+        <%= doc_tramitacao.pessoa_destino.nome %>
+        <div id="subtitulo"><b><%= doc_tramitacao.pessoa_destino.setor.sigla %></b></div>
+      </div>
+    <% end %>
+  </fieldset>
 
-<fieldset>
-<table>
-  <tr>
-    <th>Setor destino</th>
-    <th>Pessoa destino</th>
-    <th>Data</th>
-  </tr>
-
-<% @documento.doc_tramitacaos.each do |doc_tramitacao| %>
-  <tr>
-    <td><%= doc_tramitacao.pessoa_destino.setor.nome %></td>
-    <td><%= doc_tramitacao.pessoa_destino.nome %></td>
-    <td><%= doc_tramitacao.data_hora %></td>
-  </tr>
-<% end %>
-</table>
-<% if @documento.setor_atual == current_user.funcionario.setor %>
-  <p><%= link_to 'tramitar', new_documento_doc_tramitacao_path(@documento) %>
-<% end %>
-
-</fieldset>
-</p>
-<%= link_to 'Editar | ', edit_documento_path(@documento) if can? :edit, @documento %>
-<%= link_to 'Excluir | ', @documento, :confirm => 'Tem certeza que deseja excluir?', :method => :delete if @documento.pode_ser_excluido? %>
-<%= link_to 'Voltar', documentos_path %>
-
+  <% if @documento.setor_atual == current_user.funcionario.setor %>
+    <%= link_to 'tramitar', new_documento_doc_tramitacao_path(@documento) %>
+  <% end %>
+  <%= link_to 'Editar', edit_documento_path(@documento) if can? :edit, @documento %>
+  <%= link_to 'Excluir', @documento, :confirm => 'Tem certeza que deseja excluir?', :method => :delete if @documento.pode_ser_excluido? %>
+  <%= link_to 'Voltar', documentos_path %> 

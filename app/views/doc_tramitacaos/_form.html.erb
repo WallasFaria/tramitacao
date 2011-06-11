@@ -1,6 +1,11 @@
 <%= semantic_form_for [@documento, @doc_tramitacao] do |f| %>
  
-  <div id="new"><%= f.input :pessoa_destino, :as => :select, :collection => @documento.pessoas_para_tramitar.map {|p| [p.nome, p.id]}, :label => 'Tramitar documento para' %></div>
+  <div id="new">
+    <%= f.input :pessoa_destino, :as => :select,
+    :collection => @documento.pessoas_para_tramitar.map {|p| [p.nome, p.id]},
+    :label => 'Tramitar documento para' %>
+  </div>
+  
   <%= f.submit 'Salvar' %>
 
 <% end %>

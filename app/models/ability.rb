@@ -6,8 +6,10 @@ class Ability
     if user.funcionario.blank?
       can :create, Funcionario
     else
-      can :manage, Documento, {:setor_atual => user.funcionario.try(:setor) }
       can [:create, :read], Documento
+      can [:edit, :destroy], Documento do |documento|
+        documento.doc_tramitacaos.blank?
+      end
 
       can :manage, DocTramitacao do |tramitacao|
         user.funcionario.setor == tramitacao.documento.setor_atual

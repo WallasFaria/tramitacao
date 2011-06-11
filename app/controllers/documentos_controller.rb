@@ -13,17 +13,4 @@ class DocumentosController < InheritedResources::Base
     end
   end
 
-  def index
-    if current_user.funcionario.blank?
-      redirect_to new_funcionario_path
-    else
-      @documentos = Documento.all
-
-      respond_to do |format|
-        format.html # index.html.erb
-        format.xml  { render :xml => @documentos }
-      end
-    end
-  end
-
 end

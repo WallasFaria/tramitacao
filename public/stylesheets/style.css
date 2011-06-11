@@ -49,7 +49,7 @@ h3 {
 }
 h4 {
   font-size: 110%;
-  margin: -1em 0em 1em 2.2em;
+  margin: -1em 0.2em 1em 2.7em;
   color: #688;
 }
 blockquote {
@@ -126,7 +126,7 @@ em {
 #col2{
   float: left;
   width: 20%;
-  margin-left: 6%;
+  margin-left: 3%;
   margin-bottom: 1em;
   padding-right: 1%;
 }
@@ -166,16 +166,17 @@ em {
 
 .documentos {
   line-height: 1.5em;
-	width: 500px;
-	height: 80px;
+	width: 440px;
+	height: 70px;
 	padding-right: 16px;
 	padding-left: 80px;
 	padding-top: 12px;
-	background:#fff url(/images/doc.png) no-repeat;
+	background: transparent url(/images/doc.png) no-repeat;
 }
-.documentos a{color: #666; margin: 0em 0em 0.5em 0em;}.documentos a:hover{color: #5EA730;}
-.documentos #dir {width: 100px; height: 60px; float: right; margin-right: 7em; margin-top: 0.2em;}
-.documentos #esq {	position: relative; width: 300; float: left;}
+.documentos a{color: #666; margin: 0em 0em 0.5em 0em;}
+.documentos a:hover{color: #5EA730;}
+.documentos #dir {width: 100px; height: 60px; float: right; margin-top: 0.2em;}
+.documentos #esq {position: absolute; width: 300; float: left;}
 
 .setores {
   line-height: 1.5em;
@@ -188,7 +189,7 @@ em {
 }
 .funcionarios a{color: #666; margin: 0em 0em 0.5em 0em;}.funcionarios a:hover{color: #5EA730;}
 .funcionarios #dir {width: 100px; height: 60px; float: right; margin-right: 7em; margin-top: 0.2em;}
-.funcionarios #esq {	position: relative;	float: left;}
+.funcionarios #esq {position: absolute;	float: left;}
 
 .funcionarios {
   line-height: 1.5em;
@@ -197,7 +198,7 @@ em {
 	padding-right: 16px;
 	padding-left: 80px;
 	padding-top: 12px;
-	background:#fff url(/images/user.png) no-repeat;
+	background: transparent url(/images/user.png) no-repeat;
 }
 .setores a{color: #666; margin: 0em 0em 0.5em 0em;}.setores a:hover{color: #5EA730;}
 .setores #dir {width: 100px; height: 60px; float: right; margin-right: 7em; margin-top: 0.2em;}
@@ -205,13 +206,60 @@ em {
 
 #log {position: relative;	float: right; margin: 0em 1em 0em 0em; color: #666;}
 
-#new{width: 200px; margin-bottom:2em;}
-#new li{height: 56px; list-style-type: none; margin-bottom: 1em;}
-#new li label{float: top;}
-#new li input, select{width:190px; margin-left: 0em; float: bottom;}
-#new p {margin-top: -0.8em; color: red;}
+#new{
+  width: 200px;
+  margin-bottom:2em;
+}
+#new li{
+  height: 56px;
+  list-style-type: none;
+  margin-bottom: 1em;
+}
+#new li label{
+  float: top;
+}
+#new li input, select{
+  width:190px;
+  margin-left: 0em;
+  float: bottom;
+}
+#new p {
+  margin-top: -0.8em;
+  color: red;
+}
 
-#subtitulo {line-height: 2em; margin: 0em 0em -0.5em 1.2em; color: #688; font-size: 120%;}
+#subtitulo {
+  color: #919191;
+  border:1px solid #d5dade;
+  background: #fafafa;
+  border-radius: 7px;
+  font-size:105%;
+  margin: 0.2em 0.1em 0.7em 0.1em;
+  padding-right: 0.5em;
+  text-align: center;
+  height: 22px;
+}
+#tramitacoes {
+  color: #919191;
+  border:1px solid #d5dade;
+  background: #fafafa;
+  padding: 0.3em ;
+  padding-top: 0.6em;
+  text-align: center;
+  height: 76px;
+  width: 102px;
+  float: left;
+  margin-bottom: 1em;
+}
+#data {
+  color: #919191;
+  padding: 0.7em 0em 0em 0em;
+  float: left;
+  text-align: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 1em;
+}
 
 /*scaffold*/
 pre {
@@ -266,4 +314,20 @@ pre {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+/* Round corners */
+.round {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#show {
+  border: 1px solid #688;
+  padding: 0.3em 1em 0.4em 1em;
+}
+fieldset {
+  margin-bottom: 1.3em;
+  background-color: #fefefe;
+  border:1px solid #d5dade;
 }
