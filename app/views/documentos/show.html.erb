@@ -11,7 +11,7 @@
   <fieldset class="round">
     <div id="subtitulo">tramitações</div>
     <% @documento.doc_tramitacaos.each do |doc_tramitacao| %>
-      <div id="data">tramitou p/ ---------------> <%= doc_tramitacao.data_hora %></div>
+      <div id="data">tramitou p/ ---------------> <%= h(doc_tramitacao.data_hora.strftime('%d/%m/%Y')) %></div>
       <div id="tramitacoes" class="round">
         <%= doc_tramitacao.pessoa_destino.nome %>
         <div id="subtitulo"><b><%= doc_tramitacao.pessoa_destino.setor.sigla %></b></div>

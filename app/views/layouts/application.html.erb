@@ -3,8 +3,14 @@
 <head>
   <title>Tramitacao</title>
   <%= stylesheet_link_tag :all %>
+  <script type="text/javascript" src="/javascripts/highslide-with-html.js"></script>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  <script type="text/javascript">
+    hs.graphicsDir = '/images/graphics/';
+    hs.outlineType = 'rounded-white';
+    hs.wrapperClassName = 'draggable-header';
+  </script>
 </head>
 <body>
 <!-- ---------------------------------------TOPO---------------------------------------- -->

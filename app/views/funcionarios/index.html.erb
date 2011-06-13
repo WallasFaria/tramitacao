@@ -8,7 +8,7 @@
       <table><tr><th width="110px" align="left">Matricule: <%= funcionario.matricula %>,</th>
       <th> Setor: <%= funcionario.setor.nome %> </th></tr></table>
     </div>
-    <div id="dir"><b>Possui <%= funcionario.documentos.count %> documentos</b></div>
+    <div id="dir"><b>Possui <%= n = funcionario.documentos.count %> <%= n == 1 ? 'documento' : 'documentos' %></b></div>
   </div>
 <% end %>
 

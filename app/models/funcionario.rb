@@ -1,7 +1,7 @@
 class Funcionario < ActiveRecord::Base
   belongs_to :setor
   belongs_to :user
-  has_many :documentos, :foreign_key => 'funcionario_origem_id'
+  has_many :documentos, :foreign_key => 'funcionario_origem_id'#, :order => 'data_hora DESC'
 
   validates_presence_of :nome
   validates_presence_of :matricula

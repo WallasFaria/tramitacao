@@ -25,7 +25,22 @@
             <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
             <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
           </div>
-          <div id="dir"><b><%= documento.doc_tramitacaos.count %> Tramitações</b> <p>Setor atual: <%= documento.setor_atual.sigla %></div>
+          <div id="dir">
+            <a href="index.ht" onclick="return hs.htmlExpand(this)"><%= n = documento.doc_tramitacaos.count %> <%= n == 1 ? 'Tramitação' : 'Tramitações' %></a>
+            <div class="highslide-maincontent">
+	            <fieldset class="round">
+                <div id="subtitulo">tramitações</div>
+	              <% documento.doc_tramitacaos.each do |doc_tramitacao| %>
+                  <div id="data">tramitou p/ ---------------> <%= h(doc_tramitacao.data_hora.strftime('%d/%m/%Y')) %></div>
+                  <div id="tramitacoes" class="round">
+                    <%= doc_tramitacao.pessoa_destino.nome %>
+                    <div id="subtitulo"><b><%= doc_tramitacao.pessoa_destino.setor.sigla %></b></div>
+                  </div>
+                <% end %>
+              </fieldset>
+            </div>
+            <p>Setor atual: <%= documento.setor_atual.sigla %>
+          </div>
         </div>
       <% end %>
     </fieldset>
@@ -44,7 +59,7 @@
           </div>
           <div id="dir">
             <% if documento.setor_atual == current_user.funcionario.setor %>
-              <b id="tramitar"><%= link_to 'Tramitar', new_documento_doc_tramitacao_path(documento) %></b> <p>
+              <b id="tramitar"><%= link_to 'tramitar', new_documento_doc_tramitacao_path(documento) %></b><p>
             <% end %>
             Setor atual: <%= documento.setor_atual.sigla %>
           </div>
