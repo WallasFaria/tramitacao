@@ -24,4 +24,4 @@
   <% end %>
   <%= link_to 'Editar', edit_documento_path(@documento) if can? :edit, @documento %>
   <%= link_to 'Excluir', @documento, :confirm => 'Tem certeza que deseja excluir?', :method => :delete if @documento.pode_ser_excluido? %>
-  <%= link_to 'Voltar', documentos_path %> 
+  <%= link_to 'Voltar', :back %> 
