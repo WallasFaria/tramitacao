@@ -21,9 +21,9 @@
         <div class="documentos">
           <div id="esq">
             <h3><%= link_to documento.tipo + ' Nº' + documento.numero_de_processo , documento %></h3>
-            Assunto: <%= documento.assunto %> 
-            <table><tr><th width="80px" align="left">Origem: <%= documento.setor_origem.sigla %>,</th>
-            <th>por <%= documento.funcionario_origem.nome %> </th></tr></table>
+            <b>Assunto: </b><%= documento.assunto %> 
+            <table><tr><th width="66px" align="left">Atualmente</th>
+            <th>com <%= documento.funcionario_atual.nome %></th></tr></table>
           </div>
           <div id="dir">
             <a href="index.ht" onclick="return hs.htmlExpand(this)"><%= n = documento.doc_tramitacaos.count %> <%= n == 1 ? 'Tramitação' : 'Tramitações' %></a>
