@@ -9,5 +9,5 @@ gem 'inherited_resources'
 gem 'devise', '1.1.rc0'
 gem 'cancan'
 
-gem 'sqlite3'
+gem 'pg'
 
