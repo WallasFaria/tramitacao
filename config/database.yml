@@ -3,21 +3,21 @@ development:
   encoding: unicode
   database: pg_development
   pool: 5
-  username: postgres
-  password: 
+  username: wallas
+  password: 253152
 
 test:
   adapter: postgresql
   encoding: unicode
   database: pg_test
   pool: 5
-  username: postgres
-  password: 
+  username: wallas
+  password: 253152
 
 production:
   adapter: postgresql
   encoding: unicode
   database: pg_production
   pool: 5
-  username: postgres
-  password: 
+  username: wallas
+  password: 253152
